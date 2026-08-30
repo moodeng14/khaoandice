@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary 💕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ╔═══════════════════════════════════════════════════════╗
+     ║  หน้า 1 — หน้าเปิด                                        ║
+     ╚═══════════════════════════════════════════════════════╝ -->
+<section id="page1" class="page active">
+  <div class="floating-hearts" id="heartsContainer"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow">One Year Together</p>
+    <h1 class="hero-title">Happy<br><span>Anniversary</span></h1>
+
+    <svg class="hero-divider" viewBox="0 0 160 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 12c14-18 28 10 40-2 10-10 20 6 30-2 10-8 20 6 30-2 10-8 22 4 30-6" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="80" cy="12" r="3.5" fill="var(--rose)"/>
+    </svg>
+
+    <!-- แก้ข้อความบรรทัดด้านล่างนี้ได้ (ข้อความใต้หัวข้อหน้าแรก) -->
+    <p class="hero-sub">365 days, countless memories, one us.</p>
+
+    <button id="startBtn" class="btn-main">กดตรงนี้ <span class="btn-heart">♥</span></button>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════╗
+     ║  หน้า 2 — จดหมาย 3 ฉบับ                                   ║
+     ╚═══════════════════════════════════════════════════════╝ -->
+<section id="page2" class="page">
+
+  <!-- 🖼️ ใส่ "รูปคู่พื้นหลัง" ของหน้านี้ได้ที่ style.css
+       ค้นหาคลาส .bg-photo แล้วใส่ path รูปใน background-image: url('images/...jpg'); -->
+  <div class="bg-photo"></div>
+  <div class="overlay"></div>
+
+  <div class="page2-content">
+    <h2 class="page2-title">Open Our Letters</h2>
+    <p class="page2-hint">แตะซองจดหมายทีละซอง เรียงจากซ้ายไปขวา</p>
+
+    <div class="envelopes" id="envelopes">
+      <div class="envelope" data-index="1">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-line"></div>
+          <div class="wax-seal">1</div>
+        </div>
+        <p class="envelope-label">Letter One</p>
+      </div>
+
+      <div class="envelope" data-index="2">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-line"></div>
+          <div class="wax-seal">2</div>
+        </div>
+        <p class="envelope-label">Letter Two</p>
+      </div>
+
+      <div class="envelope" data-index="3">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-line"></div>
+          <div class="wax-seal">3</div>
+        </div>
+        <p class="envelope-label">Letter Three</p>
+      </div>
+      <!-- หมายเหตุ: ซองทั้ง 3 ใช้โครงสร้างเดียวกัน แก้แค่ data-index, ตัวเลขใน wax-seal และ label -->
+
+    </div>
+
+    <button id="toGalleryBtn" class="btn-main btn-hidden">See Our Memories</button>
+  </div>
+</section>
+
+<!-- กล่องจดหมาย (ป็อปอัพ) ข้อความ+รูปของจดหมายแต่ละฉบับถูกดึงมาจาก script.js
+     (ดูตัวแปร letters ใน script.js ว่าใส่ข้อความ/รูปบรรทัดไหน) -->
+<div id="letterModal" class="letter-modal">
+  <div class="letter-card">
+    <button class="close-letter" id="closeLetterBtn">×</button>
+    <div class="letter-photo" id="letterPhoto"></div>
+    <p class="letter-text" id="letterText"></p>
+  </div>
+</div>
+
+<!-- ╔═══════════════════════════════════════════════════════╗
+     ║  หน้า 3 — รวมรูปทั้งหมด (เลื่อนดูได้)                        ║
+     ╚═══════════════════════════════════════════════════════╝ -->
+<section id="page3" class="page">
+  <p class="eyebrow eyebrow-light">Our Little</p>
+  <h2 class="gallery-title">Memory Lane</h2>
+
+  <!-- รูปทั้งหมดถูกดึงมาจากตัวแปร galleryImages ใน script.js
+       (ดูว่าใส่รูปบรรทัดไหนใน script.js) -->
+  <div class="gallery-scroll" id="galleryScroll"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
